@@ -79,16 +79,16 @@
   <!-- ============================ ENGLISH ============================ -->
   <article id="en" lang="en">
     <h2>Hush House Privacy Policy</h2>
-    <p class="date">Effective date: 28 October 2026</p>
+    <p class="date">Effective date: 29 October 2026</p>
 
     <div class="summary">
       <p><strong>In short</strong></p>
       <ul>
         <li>There are no accounts. Your progress stays on your device.</li>
-        <li>We don't run any servers or analytics of our own, we don't receive your personal data, and we never sell it.</li>
-        <li>Ads are served by Google AdMob. The Meta (Facebook) SDK measures whether our own ad campaigns lead to installs.</li>
+        <li>We use PostHog (EU cloud, Frankfurt) for anonymous gameplay analytics: which floors are started, won, failed or left, so we can tune the difficulty. It is never linked to your name, email or Apple Account, and we never sell data.</li>
+        <li>Ads are served by Google AdMob. The Meta (Facebook) SDK measures whether our own ad campaigns lead to installs; it is not started at all in the EEA, the UK and Switzerland.</li>
         <li>Your advertising identifier (IDFA) is shared only if you allow Apple's tracking prompt.</li>
-        <li>Where the law requires it, Google's consent form is shown before any ads load and before Meta starts.</li>
+        <li>Where the law requires it, Google's consent form is shown before any ads load, and analytics starts only if you agree.</li>
       </ul>
     </div>
 
@@ -96,13 +96,13 @@
     <p>Hush House (Turkish: Huzur Apartmanı) is a logic puzzle game for iPhone and iPad made by Tolga Sayan, an individual developer ("we", "us"). For the purposes of the EU/UK General Data Protection Regulation (GDPR) and Turkey's Personal Data Protection Law No. 6698 (KVKK), Tolga Sayan is the controller for the app. Contact: <a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a>.</p>
 
     <h3>2. Data that stays on your device</h3>
-    <p>Your game progress (current floor, hints, streak, daily puzzle results), your settings (sound, haptics) and whether you have an active subscription are saved only on your device, in the app's local storage. We never receive this data. It is deleted when you delete the app, and it is included in your normal device backup (iCloud or computer) under Apple's control.</p>
+    <p>Your game progress (current floor, hints, streak, stars and personal records, daily puzzle results), your settings (sound, haptics) and whether you bought No Ads are saved on your device, in the app's local storage. We don't receive this data, apart from the few summary values listed in section 6. It is deleted when you delete the app, and it is included in your normal device backup (iCloud or computer) under Apple's control.</p>
 
     <h3>3. What we don't do</h3>
     <ul>
       <li>No sign-up, login or account of any kind.</li>
-      <li>No servers of our own and no analytics of our own: the app doesn't send your data to us.</li>
-      <li>We don't sell your personal data, and we don't receive it in the first place.</li>
+      <li>No servers of our own. Anonymous analytics goes to PostHog (section 6), and nothing else is sent to us.</li>
+      <li>We don't sell data, and we never link analytics to who you are.</li>
       <li>We don't ask for your name, email address, contacts, photos, microphone or precise location.</li>
     </ul>
 
@@ -113,7 +113,7 @@
       <li>your IP address, from which an approximate (coarse) location is derived;</li>
       <li>advertising data and interactions, such as which ads were shown and whether you tapped them;</li>
       <li>diagnostic and performance data about the ads;</li>
-      <li>device identifiers, including the advertising identifier (IDFA) <strong>only if you allow tracking</strong> (see section 6).</li>
+      <li>device identifiers, including the advertising identifier (IDFA) <strong>only if you allow tracking</strong> (see section 7).</li>
     </ul>
     <p>Whether ads are personalised depends on your choices in the consent form (where it applies) and on the tracking permission. Because the game is rated 4+, we limit ads to content suitable for general audiences (Google's "G" rating). Google processes this data under its own policies:</p>
     <ul>
@@ -123,70 +123,82 @@
     </ul>
 
     <h3>5. Ad measurement: Meta (Facebook) SDK</h3>
-    <p>We use the Meta SDK, from Meta Platforms Ireland Ltd. / Meta Platforms, Inc., only to find out whether our own advertising campaigns on Meta's services lead to people installing and playing the game. Automatic event logging is turned off. The app sends Meta:</p>
+    <p>We use the Meta SDK, from Meta Platforms Ireland Ltd. / Meta Platforms, Inc., only to find out whether our own advertising campaigns on Meta's services lead to people installing and playing the game. <strong>In the EEA, the UK and Switzerland, where GDPR applies, the Meta SDK is not started at all</strong>, so nothing is sent to Meta from the app there. Elsewhere, automatic event logging is turned off and the app sends Meta:</p>
     <ul>
       <li>that the app was opened (which also lets Meta attribute the install to an ad);</li>
-      <li>a few game milestones, each at most once per install: finishing the tutorial, reaching floor 10, reaching floor 30, and starting a subscription. The subscription event contains no price or payment details.</li>
+      <li>a few game milestones, each at most once per install: finishing the tutorial, reaching floor 10 and reaching floor 30;</li>
+      <li>buying No Ads, with the price amount and currency you paid. It contains no name, Apple Account or payment card details.</li>
     </ul>
-    <p>Along with these events, the Meta SDK sends technical information such as device model, operating system version, language, time zone and IP address. The advertising identifier (IDFA) is sent to Meta <strong>only if you allow tracking</strong>. The Meta SDK is not started until ads are allowed to start (see section 7); milestones reached before that are kept on your device and sent once it starts. Meta processes this data under the <a href="https://www.facebook.com/privacy/policy/">Meta Privacy Policy</a>.</p>
+    <p>Along with these events, the Meta SDK sends technical information such as device model, operating system version, language, time zone and IP address. The advertising identifier (IDFA) is sent to Meta <strong>only if you allow tracking</strong>. In the United States the app turns on Meta's Limited Data Use mode, and Meta applies its restrictions based on the state you are in. The Meta SDK starts only once ads are allowed to start; milestones reached before that are kept on your device and sent once it starts. Meta processes this data under the <a href="https://www.facebook.com/privacy/policy/">Meta Privacy Policy</a>.</p>
     <p>On first launch the app also registers with Apple's SKAdNetwork, Apple's privacy-preserving install attribution. Apple reports aggregated, delayed results to ad networks without any identifier that points to you.</p>
 
-    <h3>6. Apple's tracking permission (ATT) and the IDFA</h3>
+    <h3>6. Analytics: PostHog</h3>
+    <p>To learn where players get stuck and to tune the difficulty of the floors, the game sends anonymous gameplay events to PostHog, from PostHog Inc. We use PostHog's EU cloud, so the data is stored in Frankfurt, Germany. The app creates a random ID on your device for this; it is not your name, email, Apple Account or advertising identifier (IDFA), and we never connect it to who you are. Deleting the app deletes the ID.</p>
+    <p>What is sent:</p>
+    <ul>
+      <li>gameplay events: viewing the rule cards, starting, winning, failing or leaving a floor (with the floor number, board size, time taken, hearts lost, hints and undos used, stars and whether it was a personal record), using a hint, opening the daily puzzle share sheet, opening the streak chest, showing or watching an ad (type only), and viewing, buying or restoring No Ads (no price or payment details);</li>
+      <li>a few summary values: highest floor reached, days since install, whether you own No Ads, app language and total stars;</li>
+      <li>app opened, backgrounded and installed or updated, with the app version;</li>
+      <li>device model, operating system version, language, and the country derived from your IP address. IP addresses themselves are discarded when the data arrives ("anonymize IPs" is on) and are not stored.</li>
+    </ul>
+    <p>There is no session recording, no screen recording, no autocapture of what you tap, and no surveys. Where GDPR applies, analytics starts only if you agree in Google's consent form to storing and accessing information on your device (TCF purpose 1), and it stops if you withdraw that consent (section 8). Elsewhere it starts when the game launches. PostHog processes this data on our behalf under its <a href="https://posthog.com/privacy">privacy policy</a>.</p>
+
+    <h3>7. Apple's tracking permission (ATT) and the IDFA</h3>
     <p>The IDFA is a device identifier that Apple controls. The game asks for Apple's "Allow tracking" permission once, after you have played the first floors, not when you first open it. If you tap <strong>Allow</strong>, Google AdMob and Meta may use the IDFA for advertising and measurement. If you tap <strong>Ask App Not to Track</strong>, the app and the SDKs cannot access the IDFA, and the whole game stays available. You can change this at any time in your device's <strong>Settings › Privacy &amp; Security › Tracking</strong>.</p>
 
-    <h3>7. Consent in the EEA, UK and Switzerland (GDPR)</h3>
-    <p>Where the law requires it (for example in the European Economic Area, the United Kingdom and Switzerland), the game uses Google's User Messaging Platform to show a consent form at a natural pause after the first floors. Until you have answered it, no ads are requested and the Meta SDK does not start. Elsewhere, ads and the Meta SDK start when the game launches; the tracking permission in section 6 still applies everywhere.</p>
-    <p>Your choices in the form control how Google and its ad partners may use your data, for example for personalised or non-personalised ads. Where GDPR applies, personalised advertising relies on your consent. To review or withdraw your consent, open the game and go to <strong>Settings (Ayarlar) › Privacy options (Gizlilik seçenekleri)</strong>. This button appears wherever the form applies. Withdrawing consent doesn't affect processing that took place before.</p>
+    <h3>8. Consent in the EEA, UK and Switzerland (GDPR)</h3>
+    <p>Where the law requires it (for example in the European Economic Area, the United Kingdom and Switzerland), the game uses Google's User Messaging Platform to show a consent form at a natural pause after the first floors. Until you have answered it, no ads are requested and analytics doesn't start. Analytics starts only if you agree to storing and accessing information on your device. The Meta SDK never starts in these regions. Elsewhere, ads, analytics and the Meta SDK start when the game launches; the tracking permission in section 7 still applies everywhere.</p>
+    <p>Your choices in the form control how Google and its ad partners may use your data, for example for personalised or non-personalised ads, and whether our analytics runs. Where GDPR applies, personalised advertising relies on your consent. To review or withdraw your consent, open the game and go to <strong>Settings (Ayarlar) › Privacy options (Gizlilik seçenekleri)</strong>. This button appears wherever the form applies. Withdrawing consent doesn't affect processing that took place before.</p>
 
-    <h3>8. Purchases</h3>
-    <p>Hush House Premium is an auto-renewing subscription sold through the App Store. Apple processes the payment; we never see your name, Apple Account or payment details. The app only checks with Apple, on your device, whether a subscription is active. See <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+    <h3>9. Purchases</h3>
+    <p>No Ads is a single one-time purchase (a non-consumable in-app purchase) sold through the App Store. There is no subscription and nothing renews. Apple processes the payment; we never see your name, Apple Account or payment details. The app only checks with Apple, on your device, whether you own No Ads. See <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
 
-    <h3>9. Notifications</h3>
+    <h3>10. Notifications</h3>
     <p>If you allow notifications, the game schedules reminders locally on your device (around 12:30 and 20:00, only for the week after you last opened it). Nothing is sent to a server, and no push token is collected. You can turn them off in your device's <strong>Settings › Notifications</strong>.</p>
 
-    <h3>10. Children</h3>
-    <p>The game is rated 4+, which means it contains no objectionable content. It is a general-audience game and is not part of the App Store Kids category. Ads are limited to content suitable for general audiences. We don't knowingly collect personal data from children ourselves; the app collects no personal data on our behalf at all. If you are a parent or guardian and have a concern, contact us at <a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a>. You can also decline the tracking permission and, where it applies, consent in the form, and you can restrict tracking through Apple's Screen Time settings.</p>
+    <h3>11. Children</h3>
+    <p>The game is rated 4+, which means it contains no objectionable content. It is a general-audience game and is not part of the App Store Kids category. Ads are limited to content suitable for general audiences. We don't knowingly collect personal data from children; the analytics described in section 6 is anonymous and never linked to a person. If you are a parent or guardian and have a concern, contact us at <a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a>. You can also decline the tracking permission and, where it applies, consent in the form, and you can restrict tracking through Apple's Screen Time settings.</p>
 
-    <h3>11. Data retention</h3>
+    <h3>12. Data retention</h3>
     <ul>
       <li>On your device: game data stays until you delete the app.</li>
-      <li>With us: we hold no personal data, so there is nothing for us to retain or delete.</li>
+      <li>PostHog: anonymous analytics events are kept in our PostHog project only as long as they help us improve the game. We hold no other data about you.</li>
       <li>Google and Meta keep the data they collect for the periods described in their own privacy policies linked above.</li>
     </ul>
 
-    <h3>12. International transfers</h3>
-    <p>Google and Meta may process the data described above on servers outside your country, including in the United States, under the safeguards described in their privacy policies.</p>
+    <h3>13. International transfers</h3>
+    <p>Google and Meta may process the data described above on servers outside your country, including in the United States, under the safeguards described in their privacy policies. PostHog stores our analytics data in its EU cloud in Frankfurt, Germany.</p>
 
-    <h3>13. Your rights (GDPR and KVKK)</h3>
+    <h3>14. Your rights (GDPR and KVKK)</h3>
     <p>Depending on where you live, you may have the right to access, correct or delete your personal data, to restrict or object to its processing, to data portability, to withdraw consent at any time, and to lodge a complaint with a data protection authority (in the EU/EEA, your local supervisory authority; in the UK, the ICO; in Turkey, the Personal Data Protection Board, KVKK Kurulu). Under KVKK Article 11 you may also ask whether your data is processed, for what purpose, and to whom it is transferred.</p>
-    <p>Because we don't hold any personal data, we usually cannot identify you. You can:</p>
+    <p>Because the analytics data we hold is anonymous, we usually cannot identify you or find your data. You can:</p>
     <ul>
       <li>delete all game data by deleting the app;</li>
-      <li>withdraw ad consent in <strong>Settings › Privacy options</strong> in the game (where it applies), and turn off tracking in your device's settings;</li>
+      <li>withdraw ad and analytics consent in <strong>Settings › Privacy options</strong> in the game (where it applies), and turn off tracking in your device's settings;</li>
       <li>exercise your rights over data held by Google or Meta through the tools in their privacy policies;</li>
       <li>contact us at <a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a>; we will reply within the time the law requires and help where we can.</li>
     </ul>
 
-    <h3>14. Changes to this policy</h3>
+    <h3>15. Changes to this policy</h3>
     <p>If the app's data practices change, we will update this page and its effective date before the change takes effect in the app.</p>
 
-    <h3>15. Contact</h3>
+    <h3>16. Contact</h3>
     <p class="contact">Tolga Sayan · <a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a></p>
   </article>
 
   <!-- ============================ TÜRKÇE ============================ -->
   <article id="tr" lang="tr">
     <h2>Huzur Apartmanı Gizlilik Politikası</h2>
-    <p class="date">Yürürlük tarihi: 28 Ekim 2026</p>
+    <p class="date">Yürürlük tarihi: 29 Ekim 2026</p>
 
     <div class="summary">
       <p><strong>Kısaca</strong></p>
       <ul>
         <li>Hesap sistemi yok. İlerlemen cihazında kalır.</li>
-        <li>Kendi sunucumuz ya da kendi analitik aracımız yok; kişisel verilerin bize gelmez ve onları asla satmayız.</li>
-        <li>Reklamları Google AdMob gösterir. Meta (Facebook) SDK'sı yalnızca kendi reklam kampanyalarımızın kuruluma dönüşüp dönüşmediğini ölçer.</li>
+        <li>Zorluğu ayarlayabilmek için anonim oyun analitiği amacıyla PostHog'u (AB bulutu, Frankfurt) kullanırız: hangi katların başlatıldığı, kazanıldığı, kaybedildiği ya da yarıda bırakıldığı. Bu veriler adınla, e-postanla ya da Apple Hesabınla asla ilişkilendirilmez ve hiçbir veriyi satmayız.</li>
+        <li>Reklamları Google AdMob gösterir. Meta (Facebook) SDK'sı yalnızca kendi reklam kampanyalarımızın kuruluma dönüşüp dönüşmediğini ölçer; AEA, Birleşik Krallık ve İsviçre'de hiç başlatılmaz.</li>
         <li>Reklam kimliğin (IDFA) yalnızca Apple'ın izleme iznini verirsen paylaşılır.</li>
-        <li>Yasanın gerektirdiği yerlerde, reklamlar yüklenmeden ve Meta başlamadan önce Google'ın onay ekranı gösterilir.</li>
+        <li>Yasanın gerektirdiği yerlerde reklamlar yüklenmeden önce Google'ın onay ekranı gösterilir; analitik yalnızca onay verirsen başlar.</li>
       </ul>
     </div>
 
@@ -194,13 +206,13 @@
     <p>Huzur Apartmanı (İngilizce adı Hush House), bireysel geliştirici Tolga Sayan ("biz") tarafından geliştirilen bir iPhone ve iPad mantık bulmacası oyunudur. 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve AB/Birleşik Krallık Genel Veri Koruma Tüzüğü (GDPR) bakımından uygulamanın veri sorumlusu Tolga Sayan'dır. İletişim: <a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a>.</p>
 
     <h3>2. Cihazında kalan veriler</h3>
-    <p>Oyun ilerlemen (bulunduğun kat, ipuçları, seri, günlük bulmaca sonuçları), ayarların (ses, titreşim) ve aktif bir aboneliğin olup olmadığı yalnızca cihazında, uygulamanın yerel depolamasında saklanır. Bu veriler bize hiç gelmez. Uygulamayı silince silinir; cihazının normal yedeğine (iCloud veya bilgisayar) Apple'ın kontrolünde dahil edilir.</p>
+    <p>Oyun ilerlemen (bulunduğun kat, ipuçları, seri, yıldızlar ve kişisel rekorlar, günlük bulmaca sonuçları), ayarların (ses, titreşim) ve Reklamsız'ı satın alıp almadığın cihazında, uygulamanın yerel depolamasında saklanır. Bölüm 6'da sayılan birkaç özet değer dışında bu veriler bize gelmez. Uygulamayı silince silinir; cihazının normal yedeğine (iCloud veya bilgisayar) Apple'ın kontrolünde dahil edilir.</p>
 
     <h3>3. Yapmadıklarımız</h3>
     <ul>
       <li>Kayıt, giriş ya da herhangi bir hesap yok.</li>
-      <li>Kendi sunucumuz ve kendi analitik aracımız yok: uygulama verilerini bize göndermez.</li>
-      <li>Kişisel verilerini satmayız; zaten bize ulaşmazlar.</li>
+      <li>Kendi sunucumuz yok. Anonim analitik PostHog'a gider (bölüm 6); bunun dışında bize hiçbir şey gönderilmez.</li>
+      <li>Hiçbir veriyi satmayız ve analitiği asla kim olduğunla ilişkilendirmeyiz.</li>
       <li>Adını, e-posta adresini, kişilerini, fotoğraflarını, mikrofonunu ya da hassas konumunu istemeyiz.</li>
     </ul>
 
@@ -211,7 +223,7 @@
       <li>IP adresin ve ondan çıkarılan yaklaşık konum;</li>
       <li>reklam verileri ve etkileşimleri (hangi reklamın gösterildiği, dokunup dokunmadığın gibi);</li>
       <li>reklamlarla ilgili tanılama ve performans verileri;</li>
-      <li>cihaz kimlikleri; reklam kimliği (IDFA) <strong>yalnızca izleme iznini verirsen</strong> (bkz. bölüm 6).</li>
+      <li>cihaz kimlikleri; reklam kimliği (IDFA) <strong>yalnızca izleme iznini verirsen</strong> (bkz. bölüm 7).</li>
     </ul>
     <p>Reklamların kişiselleştirilip kişiselleştirilmeyeceği onay ekranındaki seçimlerine (geçerli olduğu yerlerde) ve izleme iznine bağlıdır. Oyun 4+ yaş derecelendirmesine sahip olduğu için reklamları genel izleyiciye uygun içerikle (Google'ın "G" derecesi) sınırlarız. Google bu verileri kendi politikalarına göre işler:</p>
     <ul>
@@ -221,54 +233,66 @@
     </ul>
 
     <h3>5. Reklam ölçümü: Meta (Facebook) SDK</h3>
-    <p>Meta Platforms Ireland Ltd. / Meta Platforms, Inc.'in Meta SDK'sını yalnızca Meta hizmetlerinde yürüttüğümüz kendi reklam kampanyalarımızın oyunun kurulup oynanmasına yol açıp açmadığını görmek için kullanırız. Otomatik olay kaydı kapalıdır. Uygulama Meta'ya şunları gönderir:</p>
+    <p>Meta Platforms Ireland Ltd. / Meta Platforms, Inc.'in Meta SDK'sını yalnızca Meta hizmetlerinde yürüttüğümüz kendi reklam kampanyalarımızın oyunun kurulup oynanmasına yol açıp açmadığını görmek için kullanırız. <strong>GDPR'ın geçerli olduğu AEA, Birleşik Krallık ve İsviçre'de Meta SDK'sı hiç başlatılmaz</strong>; bu bölgelerde uygulamadan Meta'ya hiçbir şey gönderilmez. Diğer bölgelerde otomatik olay kaydı kapalıdır ve uygulama Meta'ya şunları gönderir:</p>
     <ul>
       <li>uygulamanın açıldığını (Meta kurulumu bir reklama bu sayede bağlayabilir);</li>
-      <li>kurulum başına en fazla birer kez olmak üzere birkaç oyun adımını: eğitimi bitirme, 10. kata ulaşma, 30. kata ulaşma ve abonelik başlatma. Abonelik olayı fiyat ya da ödeme bilgisi içermez.</li>
+      <li>kurulum başına en fazla birer kez olmak üzere birkaç oyun adımını: eğitimi bitirme, 10. kata ulaşma ve 30. kata ulaşma;</li>
+      <li>Reklamsız satın alımını, ödediğin tutar ve para birimiyle. Bu olay adını, Apple Hesabını ya da kart bilgilerini içermez.</li>
     </ul>
-    <p>Meta SDK'sı bu olaylarla birlikte cihaz modeli, işletim sistemi sürümü, dil, saat dilimi ve IP adresi gibi teknik bilgileri de gönderir. Reklam kimliği (IDFA) Meta'ya <strong>yalnızca izleme iznini verirsen</strong> gönderilir. Meta SDK'sı, reklamların başlamasına izin verilene kadar başlatılmaz (bkz. bölüm 7); bundan önce ulaşılan adımlar cihazında tutulur ve SDK başladığında gönderilir. Meta bu verileri <a href="https://www.facebook.com/privacy/policy/">Meta Gizlilik Politikası</a>'na göre işler.</p>
+    <p>Meta SDK'sı bu olaylarla birlikte cihaz modeli, işletim sistemi sürümü, dil, saat dilimi ve IP adresi gibi teknik bilgileri de gönderir. Reklam kimliği (IDFA) Meta'ya <strong>yalnızca izleme iznini verirsen</strong> gönderilir. ABD'de uygulama Meta'nın Sınırlı Veri Kullanımı (Limited Data Use) modunu açar; Meta kısıtlamaları bulunduğun eyalete göre uygular. Meta SDK'sı ancak reklamların başlamasına izin verildikten sonra başlar; bundan önce ulaşılan adımlar cihazında tutulur ve SDK başladığında gönderilir. Meta bu verileri <a href="https://www.facebook.com/privacy/policy/">Meta Gizlilik Politikası</a>'na göre işler.</p>
     <p>Uygulama ilk açılışta Apple'ın gizliliği koruyan kurulum ölçüm sistemi SKAdNetwork'e de kaydolur. Apple, reklam ağlarına seni tanımlayan bir kimlik olmadan, toplu ve gecikmeli sonuçlar bildirir.</p>
 
-    <h3>6. Apple izleme izni (ATT) ve IDFA</h3>
+    <h3>6. Analitik: PostHog</h3>
+    <p>Oyuncuların nerede takıldığını görmek ve katların zorluğunu ayarlamak için oyun, PostHog Inc.'in PostHog hizmetine anonim oyun olayları gönderir. PostHog'un AB bulutunu kullanırız; veriler Frankfurt'ta (Almanya) saklanır. Uygulama bunun için cihazında rastgele bir kimlik oluşturur; bu kimlik adın, e-postan, Apple Hesabın ya da reklam kimliğin (IDFA) değildir ve onu asla kim olduğunla ilişkilendirmeyiz. Uygulamayı silince bu kimlik de silinir.</p>
+    <p>Gönderilenler:</p>
+    <ul>
+      <li>oyun olayları: kural kartlarını görme; bir katı başlatma, kazanma, kaybetme ya da yarıda bırakma (kat numarası, tahta boyutu, geçen süre, kaybedilen can, kullanılan ipucu ve geri alma sayısı, yıldızlar ve kişisel rekor olup olmadığıyla); ipucu kullanma; günlük bulmaca paylaşım ekranını açma; seri sandığını açma; reklam gösterilmesi ya da izlenmesi (yalnızca türü); Reklamsız sayfasını görme, satın alma ya da geri yükleme (fiyat ya da ödeme bilgisi olmadan);</li>
+      <li>birkaç özet değer: ulaşılan en yüksek kat, kurulumdan bu yana geçen gün, Reklamsız'a sahip olup olmadığın, uygulama dili ve toplam yıldız;</li>
+      <li>uygulamanın açılması, arka plana alınması ve kurulması ya da güncellenmesi, uygulama sürümüyle;</li>
+      <li>cihaz modeli, işletim sistemi sürümü, dil ve IP adresinden çıkarılan ülke. IP adresinin kendisi veri ulaştığında atılır ("IP'leri anonimleştir" açık) ve saklanmaz.</li>
+    </ul>
+    <p>Oturum kaydı, ekran kaydı, dokunduklarının otomatik kaydı ve anket yoktur. GDPR'ın geçerli olduğu yerlerde analitik yalnızca Google'ın onay ekranında cihazında bilgi saklanmasına ve bu bilgiye erişilmesine (TCF amaç 1) onay verirsen başlar; onayını geri çekersen durur (bölüm 8). Diğer bölgelerde oyun açılınca başlar. PostHog bu verileri bizim adımıza, kendi <a href="https://posthog.com/privacy">gizlilik politikasına</a> göre işler.</p>
+
+    <h3>7. Apple izleme izni (ATT) ve IDFA</h3>
     <p>IDFA, Apple'ın kontrol ettiği bir cihaz kimliğidir. Oyun Apple'ın "İzlemeye izin ver" iznini bir kez, ilk katları oynadıktan sonra sorar; oyunu ilk açtığında sormaz. <strong>İzin Ver</strong>'e dokunursan Google AdMob ve Meta IDFA'yı reklam ve ölçüm için kullanabilir. <strong>Uygulamadan İzlememesini İste</strong>'yi seçersen uygulama ve SDK'lar IDFA'ya erişemez; oyunun tamamı yine açıktır. Bu tercihi istediğin zaman cihazında <strong>Ayarlar › Gizlilik ve Güvenlik › İzleme</strong>'den değiştirebilirsin.</p>
 
-    <h3>7. AEA, Birleşik Krallık ve İsviçre'de onay (GDPR)</h3>
-    <p>Yasanın gerektirdiği yerlerde (ör. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre) oyun, ilk katlardan sonra doğal bir arada Google'ın User Messaging Platform'u ile bir onay ekranı gösterir. Bu ekranı yanıtlayana kadar reklam istenmez ve Meta SDK'sı başlamaz. Diğer bölgelerde reklamlar ve Meta SDK'sı oyun açılınca başlar; bölüm 6'daki izleme izni her yerde geçerlidir.</p>
-    <p>Onay ekranındaki seçimlerin, Google'ın ve reklam iş ortaklarının verilerini nasıl kullanabileceğini (ör. kişiselleştirilmiş ya da kişiselleştirilmemiş reklamlar) belirler. GDPR'ın geçerli olduğu yerlerde kişiselleştirilmiş reklamcılık senin onayına dayanır. Onayını gözden geçirmek veya geri çekmek için oyunda <strong>Ayarlar › Gizlilik seçenekleri</strong>'ne dokun. Bu düğme onay ekranının geçerli olduğu her yerde görünür. Onayı geri çekmek, öncesinde yapılan işlemeyi etkilemez.</p>
+    <h3>8. AEA, Birleşik Krallık ve İsviçre'de onay (GDPR)</h3>
+    <p>Yasanın gerektirdiği yerlerde (ör. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre) oyun, ilk katlardan sonra doğal bir arada Google'ın User Messaging Platform'u ile bir onay ekranı gösterir. Bu ekranı yanıtlayana kadar reklam istenmez ve analitik başlamaz. Analitik yalnızca cihazında bilgi saklanmasına ve erişilmesine onay verirsen başlar. Meta SDK'sı bu bölgelerde hiç başlamaz. Diğer bölgelerde reklamlar, analitik ve Meta SDK'sı oyun açılınca başlar; bölüm 7'deki izleme izni her yerde geçerlidir.</p>
+    <p>Onay ekranındaki seçimlerin, Google'ın ve reklam iş ortaklarının verilerini nasıl kullanabileceğini (ör. kişiselleştirilmiş ya da kişiselleştirilmemiş reklamlar) ve analitiğimizin çalışıp çalışmayacağını belirler. GDPR'ın geçerli olduğu yerlerde kişiselleştirilmiş reklamcılık senin onayına dayanır. Onayını gözden geçirmek veya geri çekmek için oyunda <strong>Ayarlar › Gizlilik seçenekleri</strong>'ne dokun. Bu düğme onay ekranının geçerli olduğu her yerde görünür. Onayı geri çekmek, öncesinde yapılan işlemeyi etkilemez.</p>
 
-    <h3>8. Satın almalar</h3>
-    <p>Huzur Premium, App Store üzerinden satılan otomatik yenilenen bir aboneliktir. Ödemeyi Apple işler; adını, Apple Hesabını ya da ödeme bilgilerini hiç görmeyiz. Uygulama yalnızca cihazında Apple'a aktif bir abonelik olup olmadığını sorar. Ayrıntılar: <a href="https://www.apple.com/tr/legal/privacy/">Apple Gizlilik Politikası</a>.</p>
+    <h3>9. Satın almalar</h3>
+    <p>Reklamsız, App Store üzerinden satılan tek seferlik bir satın alımdır (tüketilemez uygulama içi ürün). Abonelik değildir, hiçbir şey yenilenmez. Ödemeyi Apple işler; adını, Apple Hesabını ya da ödeme bilgilerini hiç görmeyiz. Uygulama yalnızca cihazında Apple'a Reklamsız'a sahip olup olmadığını sorar. Ayrıntılar: <a href="https://www.apple.com/tr/legal/privacy/">Apple Gizlilik Politikası</a>.</p>
 
-    <h3>9. Bildirimler</h3>
+    <h3>10. Bildirimler</h3>
     <p>Bildirimlere izin verirsen oyun hatırlatmaları cihazında yerel olarak planlar (yaklaşık 12.30 ve 20.00'de, yalnızca oyunu son açtığın günden sonraki bir hafta için). Sunucuya hiçbir şey gönderilmez ve anlık bildirim (push) jetonu toplanmaz. Bildirimleri cihazında <strong>Ayarlar › Bildirimler</strong>'den kapatabilirsin.</p>
 
-    <h3>10. Çocuklar</h3>
-    <p>Oyun 4+ yaş derecelendirmesine sahiptir; yani sakıncalı içerik barındırmaz. Genel izleyiciye yönelik bir oyundur ve App Store'un Çocuklar kategorisinde yer almaz. Reklamlar genel izleyiciye uygun içerikle sınırlıdır. Çocuklardan bilerek kişisel veri toplamayız; uygulama bizim adımıza hiçbir kişisel veri toplamaz. Ebeveyn ya da vasiysen ve bir endişen varsa <a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a> adresinden bize yaz. İzleme iznini ve (geçerli olduğu yerlerde) onay ekranındaki onayı reddedebilir, izlemeyi Apple'ın Ekran Süresi ayarlarından kısıtlayabilirsin.</p>
+    <h3>11. Çocuklar</h3>
+    <p>Oyun 4+ yaş derecelendirmesine sahiptir; yani sakıncalı içerik barındırmaz. Genel izleyiciye yönelik bir oyundur ve App Store'un Çocuklar kategorisinde yer almaz. Reklamlar genel izleyiciye uygun içerikle sınırlıdır. Çocuklardan bilerek kişisel veri toplamayız; bölüm 6'daki analitik anonimdir ve hiçbir kişiyle ilişkilendirilmez. Ebeveyn ya da vasiysen ve bir endişen varsa <a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a> adresinden bize yaz. İzleme iznini ve (geçerli olduğu yerlerde) onay ekranındaki onayı reddedebilir, izlemeyi Apple'ın Ekran Süresi ayarlarından kısıtlayabilirsin.</p>
 
-    <h3>11. Saklama süresi</h3>
+    <h3>12. Saklama süresi</h3>
     <ul>
       <li>Cihazında: oyun verileri uygulamayı silene kadar kalır.</li>
-      <li>Bizde: kişisel veri tutmadığımız için saklayacağımız ya da sileceğimiz bir şey yoktur.</li>
+      <li>PostHog: anonim analitik olayları PostHog projemizde yalnızca oyunu geliştirmemize yardımcı oldukları sürece tutulur. Senin hakkında başka bir veri tutmayız.</li>
       <li>Google ve Meta, topladıkları verileri yukarıda bağlantısı verilen kendi gizlilik politikalarında belirtilen sürelerce saklar.</li>
     </ul>
 
-    <h3>12. Yurt dışına aktarım</h3>
-    <p>Google ve Meta, yukarıda anlatılan verileri gizlilik politikalarında açıklanan güvenceler kapsamında, ABD dahil, bulunduğun ülke dışındaki sunucularda işleyebilir.</p>
+    <h3>13. Yurt dışına aktarım</h3>
+    <p>Google ve Meta, yukarıda anlatılan verileri gizlilik politikalarında açıklanan güvenceler kapsamında, ABD dahil, bulunduğun ülke dışındaki sunucularda işleyebilir. PostHog analitik verilerimizi AB bulutunda, Frankfurt'ta (Almanya) saklar.</p>
 
-    <h3>13. Hakların (KVKK ve GDPR)</h3>
+    <h3>14. Hakların (KVKK ve GDPR)</h3>
     <p>KVKK'nın 11. maddesi uyarınca kişisel verilerinin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini, silinmesini veya yok edilmesini isteme, itiraz etme ve zararın giderilmesini talep etme hakların vardır. GDPR kapsamındaysan ayrıca erişim, düzeltme, silme, işlemeyi kısıtlama, itiraz, veri taşınabilirliği ve onayı istediğin zaman geri çekme hakların vardır. Şikâyetlerini Türkiye'de Kişisel Verileri Koruma Kurulu'na, AB/AEA'da kendi ülkendeki denetim otoritesine, Birleşik Krallık'ta ICO'ya iletebilirsin.</p>
-    <p>Kişisel veri tutmadığımız için çoğu zaman seni tanımlayamayız. Şunları yapabilirsin:</p>
+    <p>Tuttuğumuz analitik verileri anonim olduğu için çoğu zaman seni tanımlayamaz, verilerini bulamayız. Şunları yapabilirsin:</p>
     <ul>
       <li>uygulamayı silerek tüm oyun verilerini silmek;</li>
-      <li>oyunda <strong>Ayarlar › Gizlilik seçenekleri</strong>'nden (geçerli olduğu yerlerde) reklam onayını geri çekmek ve cihaz ayarlarından izlemeyi kapatmak;</li>
+      <li>oyunda <strong>Ayarlar › Gizlilik seçenekleri</strong>'nden (geçerli olduğu yerlerde) reklam ve analitik onayını geri çekmek ve cihaz ayarlarından izlemeyi kapatmak;</li>
       <li>Google veya Meta'nın tuttuğu verilerle ilgili haklarını, kendi gizlilik politikalarındaki araçlarla kullanmak;</li>
       <li><a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a> adresinden bize yazmak; yasal süre içinde yanıt verir, elimizden geldiğince yardımcı oluruz.</li>
     </ul>
 
-    <h3>14. Bu politikadaki değişiklikler</h3>
+    <h3>15. Bu politikadaki değişiklikler</h3>
     <p>Uygulamanın veri uygulamaları değişirse, değişiklik uygulamada yürürlüğe girmeden önce bu sayfayı ve yürürlük tarihini güncelleriz.</p>
 
-    <h3>15. İletişim</h3>
+    <h3>16. İletişim</h3>
     <p class="contact">Tolga Sayan · <a href="mailto:tolgasayan@icloud.com">tolgasayan@icloud.com</a></p>
   </article>
 
