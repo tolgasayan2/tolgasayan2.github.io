@@ -1,4 +1,2 @@
-# app-ads.txt for Hush House (Huzur Apartmanı), developer Tolga Sayan.
-# Replace XXXXXXXXXXXXXXXX with your AdMob publisher ID (AdMob > Settings > Account information,
-# the digits after "pub-"). Keep the rest of the line exactly as it is.
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# app-ads.txt for Tolga Sayan's apps (Hush House / Huzur Apartmanı).
+google.com, pub-7537632509020095, DIRECT, f08c47fec0942fa0
